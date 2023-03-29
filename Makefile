@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/29 18:03:45 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/29 18:11:43 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,40 +28,41 @@ re: libftre nextlinere printfre plusre
 	$(CC) $(CFLAGS) -c $< -o ${<:.c=.o}
 
 libftmake:
-	make -C $(LIBFT)
-	make bonus -C $(LIBFT)
+	@make -C $(LIBFT)
+	@make bonus -C $(LIBFT)
 libftclean:
-	make clean -C $(LIBFT)
+	@make clean -C $(LIBFT)
 libftfclean:
-	make fclean -C $(LIBFT)
+	@make fclean -C $(LIBFT)
 libftre: libftclean libftmake
 
 nextlinemake:
-	make bonus -C $(NEXTLINE)
+	@make bonus -C $(NEXTLINE)
 nextlineclean:
-	make bonus clean -C $(NEXTLINE)
+	@make bonus clean -C $(NEXTLINE)
 nextlinefclean:
-	make bonus fclean -C $(NEXTLINE)
+	@make bonus fclean -C $(NEXTLINE)
 nextlinere: nextlinefclean nextlinemake
 
 printfmake:
-	make -C $(PRINTF)
+	@make -C $(PRINTF)
 printfclean:
-	make clean -C $(PRINTF)
+	@make clean -C $(PRINTF)
 printffclean:
-	make fclean -C $(PRINTF)
+	@make fclean -C $(PRINTF)
 printfre: printffclean printfmake
 
 plusmake:
-	make -C $(PLUS)
+	@make -C $(PLUS)
 plusclean:
-	make clean -C $(PLUS)
+	@make clean -C $(PLUS)
 plusfclean:
-	make fclean -C $(PLUS)
+	@make fclean -C $(PLUS)
 plusre: plusfclean plusmake
 
 submodules:
 	@git submodule update --init
+	@git submodule foreach git pull origin main
 	
 
 .PHONY : all clean fclean re submodules\
