@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/29 17:43:05 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/29 17:48:24 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ re: libftre nextlinere printfre
 
 libftmake:
 	make -C $(LIBFT)
+	make bonus -C $(LIBFT)
 libftclean:
 	make clean -C $(LIBFT)
 libftfclean:
