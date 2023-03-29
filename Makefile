@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/29 19:10:47 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/29 19:10:56 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,7 @@ git: fclean gitignore
 	git ls-files
 gitignore:
 	@echo ".*\n*.out\n*.o\n*.a">.gitignore
-	@echo "$(GREEN)$(PERSONALNAME) -> Gitignore created successfully.$(DEFAULT)"
+	@echo "$(GREEN)$(PERSONALNAME)Gitignore created successfully.$(DEFAULT)"
 
 #COLORS
 RED = \033[1;31m
