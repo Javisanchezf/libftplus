@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/29 17:27:09 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/29 17:40:00 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ PRINTF = 42Malaga-ft_printf
 
 OBJS := $(SRC:.c=.o)
 
-all: libftmake nextlinemake printfmake
+all: submodules libftmake nextlinemake printfmake
 clean: libftclean nextlineclean printfclean
 fclean: libftfclean nextlinefclean printffclean
 re: libftre nextlinere printfre
@@ -52,7 +52,13 @@ printffclean:
 	make fclean -C $(PRINTF)
 printfre: printffclean printfmake
 
-.PHONY : all clean fclean re libftclean libftfclean libftmake
+submodules:
+	git submodule update --init
+
+.PHONY : all clean fclean re submodules\
+libftclean libftfclean libftmake \
+nextlinemake nextlineclean nextlinefclean nextlinere \
+printfmake printfclean printffclean printfre
 
 #Personal use
 git: fclean gitignore
