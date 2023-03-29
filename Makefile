@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/29 19:11:58 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/29 19:14:51 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,7 @@ plusre: plusfclean plusmake
 submodules:
 	@git submodule update --init
 	@git submodule foreach git pull origin main
+	@echo "$(GREEN)The submodules have been created and updated successfully.$(DEFAULT)"
 	
 
 .PHONY : all clean fclean re submodules\
@@ -79,7 +80,7 @@ git: fclean gitignore
 	git ls-files
 gitignore:
 	@echo ".*\n*.out\n*.o\n*.a">.gitignore
-	@echo "$(GREEN)$(PERSONALNAME)Gitignore created successfully.$(DEFAULT)"
+	@echo "$(GREEN)Gitignore created successfully.$(DEFAULT)"
 
 #COLORS
 RED = \033[1;31m
