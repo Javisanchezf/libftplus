@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/29 21:15:30 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/29 21:17:24 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,7 +82,7 @@ git: fclean gitignore
 gitignore:
 	@echo ".*\n*.out\n*.o\n*.a">.gitignore
 	@echo "$(GREEN)Gitignore created successfully.$(DEFAULT)"
-42prepare: all
+42prepare: submodules
 	@rm -rf $(LIBFT)/.git
 	@rm -rf $(NEXTILE)/.git
 	@rm -rf $(PRINTF)/.git
