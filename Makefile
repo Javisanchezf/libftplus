@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/29 21:10:49 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/29 21:15:30 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ NEXTLINE = 42Malaga-get_next_line
 PRINTF = 42Malaga-ft_printf
 PLUS = Plus
 
-all: submodules libftmake nextlinemake printfmake plusmake
-	ar -rcs $(NAME) ./42Malaga-ft_printf/*.o ./42Malaga-get_next_line/*.o 42Malaga-libft/*.o Plus/*.o
+all: libftmake nextlinemake printfmake plusmake
+	@ar -rcs $(NAME) ./42Malaga-ft_printf/*.o ./42Malaga-get_next_line/*.o 42Malaga-libft/*.o Plus/*.o
 clean: libftclean nextlineclean printfclean plusclean
 fclean: libftfclean nextlinefclean printffclean plusfclean
 	rm -rf $(NAME)
@@ -83,10 +83,11 @@ gitignore:
 	@echo ".*\n*.out\n*.o\n*.a">.gitignore
 	@echo "$(GREEN)Gitignore created successfully.$(DEFAULT)"
 42prepare: all
-	rm -rf $(LIBFT)/.git
-	rm -rf $(NEXTILE)/.git
-	rm -rf $(PRINTF)/.git
-	rm -rf .git .gitmodules
+	@rm -rf $(LIBFT)/.git
+	@rm -rf $(NEXTILE)/.git
+	@rm -rf $(PRINTF)/.git
+	@rm -rf .git .gitmodules
+	@echo "$(GREEN)All .git removed.$(DEFAULT)"
 
 #COLORS
 RED = \033[1;31m
