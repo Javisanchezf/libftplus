@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/29 21:47:05 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/29 21:51:04 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ nextlinemake:
 nextlineclean:
 	@make bonus clean -C $(NEXTLINE)
 nextlinefclean:
-	@make bonus fclean -C $(NEXTLINE)
+	@make fclean -C $(NEXTLINE)
 nextlinere: nextlinefclean nextlinemake
 
 printfmake:
