@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/29 19:14:51 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/29 19:31:58 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,8 +61,8 @@ plusfclean:
 plusre: plusfclean plusmake
 
 submodules:
-	@git submodule update --init
-	@git submodule foreach git pull origin main
+	@git submodule update --init --recursive
+	@git submodule sync --recursive
 	@echo "$(GREEN)The submodules have been created and updated successfully.$(DEFAULT)"
 	
 
