@@ -6,14 +6,14 @@
 /*   By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:52:28 by javiersa          #+#    #+#             */
-/*   Updated: 2023/03/29 17:55:58 by javiersa         ###   ########.fr       */
+/*   Updated: 2023/03/29 21:44:59 by javiersa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PLUS_H
 # define PLUS_H
 
-# include "../42Malaga-libft/libft.h"
+# include "../libftplus.h"
 
 /*
 *	@brief		Converts the initial portion of the string pointed to by
