@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/29 17:48:24 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/29 18:03:45 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,12 @@ CLEAN = rm -Rf
 LIBFT = 42Malaga-libft
 NEXTLINE = 42Malaga-get_next_line
 PRINTF = 42Malaga-ft_printf
+PLUS = Plus
 
-all: submodules libftmake nextlinemake printfmake
-clean: libftclean nextlineclean printfclean
-fclean: libftfclean nextlinefclean printffclean
-re: libftre nextlinere printfre
+all: submodules libftmake nextlinemake printfmake plusmake
+clean: libftclean nextlineclean printfclean plusclean
+fclean: libftfclean nextlinefclean printffclean plusfclean
+re: libftre nextlinere printfre plusre
 
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o ${<:.c=.o}
@@ -51,6 +52,14 @@ printffclean:
 	make fclean -C $(PRINTF)
 printfre: printffclean printfmake
 
+plusmake:
+	make -C $(PLUS)
+plusclean:
+	make clean -C $(PLUS)
+plusfclean:
+	make fclean -C $(PLUS)
+plusre: plusfclean plusmake
+
 submodules:
 	@git submodule update --init
 	
@@ -58,7 +67,8 @@ submodules:
 .PHONY : all clean fclean re submodules\
 libftclean libftfclean libftmake \
 nextlinemake nextlineclean nextlinefclean nextlinere \
-printfmake printfclean printffclean printfre
+printfmake printfclean printffclean printfre \
+plusmake plusclean plusfclean plusre
 
 #Personal use
 git: fclean gitignore

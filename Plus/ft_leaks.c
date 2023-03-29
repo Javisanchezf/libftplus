@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftplus.h                                        :+:      :+:    :+:   */
+/*   ft_leaks.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 17:28:54 by javiersa          #+#    #+#             */
-/*   Updated: 2023/03/29 17:58:08 by javiersa         ###   ########.fr       */
+/*   Created: 2022/12/15 17:24:06 by javiersa          #+#    #+#             */
+/*   Updated: 2023/03/14 17:56:10 by javiersa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPLUS_H
-# define LIBFTPLUS_H
+// Add atexit(ft_leaks); in main and # include <stdlib.h>
 
-# include "42Malaga-libft/libft.h"
-# include "42Malaga-ft_printf/ft_printf.h"
-# include "42Malaga-get_next_line/get_next_line_bonus.h"
-# include "plus/plus.h"
-
-#endif
+void	ft_leaks(void)
+{
+	system("leaks -q a.out");
+}

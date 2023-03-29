@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftplus.h                                        :+:      :+:    :+:   */
+/*   ft_swapint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 17:28:54 by javiersa          #+#    #+#             */
-/*   Updated: 2023/03/29 17:58:08 by javiersa         ###   ########.fr       */
+/*   Created: 2023/02/05 21:44:18 by javiersa          #+#    #+#             */
+/*   Updated: 2023/02/05 21:44:41 by javiersa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPLUS_H
-# define LIBFTPLUS_H
+void	ft_swapint(int *a, int *b)
+{
+	int	aux;
 
-# include "42Malaga-libft/libft.h"
-# include "42Malaga-ft_printf/ft_printf.h"
-# include "42Malaga-get_next_line/get_next_line_bonus.h"
-# include "plus/plus.h"
-
-#endif
+	aux = *b;
+	*b = *a;
+	*a = aux;
+}

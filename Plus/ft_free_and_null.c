@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftplus.h                                        :+:      :+:    :+:   */
+/*   ft_free_and_null.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 17:28:54 by javiersa          #+#    #+#             */
-/*   Updated: 2023/03/29 17:58:08 by javiersa         ###   ########.fr       */
+/*   Created: 2023/02/22 18:00:49 by javiersa          #+#    #+#             */
+/*   Updated: 2023/03/29 18:04:15 by javiersa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPLUS_H
-# define LIBFTPLUS_H
+#include "plus.h"
 
-# include "42Malaga-libft/libft.h"
-# include "42Malaga-ft_printf/ft_printf.h"
-# include "42Malaga-get_next_line/get_next_line_bonus.h"
-# include "plus/plus.h"
-
-#endif
+int	ft_free_and_null(void **ptr)
+{
+	if (*ptr != NULL)
+	{
+		free(*ptr);
+		*ptr = NULL;
+	}
+	return (0);
+}
