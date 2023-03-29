@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/29 17:40:00 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/29 17:43:05 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,6 @@ CLEAN = rm -Rf
 LIBFT = 42Malaga-libft
 NEXTLINE = 42Malaga-get_next_line
 PRINTF = 42Malaga-ft_printf
-
-OBJS := $(SRC:.c=.o)
 
 all: submodules libftmake nextlinemake printfmake
 clean: libftclean nextlineclean printfclean
@@ -53,7 +51,8 @@ printffclean:
 printfre: printffclean printfmake
 
 submodules:
-	git submodule update --init
+	@git submodule update --init
+	
 
 .PHONY : all clean fclean re submodules\
 libftclean libftfclean libftmake \
