@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/29 21:04:48 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/29 21:08:48 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,7 +67,7 @@ submodules:
 	@echo "$(GREEN)The submodules have been created and updated successfully.$(DEFAULT)"
 	
 
-.PHONY : all clean fclean re submodules\
+.PHONY : all clean fclean re submodules git gitignore 42prepare\
 libftclean libftfclean libftmake \
 nextlinemake nextlineclean nextlinefclean nextlinere \
 printfmake printfclean printffclean printfre \
@@ -82,6 +82,11 @@ git: fclean gitignore
 gitignore:
 	@echo ".*\n*.out\n*.o\n*.a">.gitignore
 	@echo "$(GREEN)Gitignore created successfully.$(DEFAULT)"
+42prepare:
+	rm -rf $(LIBFT)/.git
+	rm -rf $(NEXTILE)/.git
+	rm -rf $(PRINTF)/.git
+	rm -rf .git
 
 #COLORS
 RED = \033[1;31m
