@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/29 17:56:33 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/29 19:07:54 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/29 19:09:34 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,16 +27,16 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
-	@echo "$(GREEN)$(PERSONALNAME) -> Objects and library created successfully."
+	@echo "$(GREEN)$(PERSONALNAME) -> Objects and library created successfully.$(DEFAULT)"
 .c.o:
 	@$(CC) $(CFLAGS) -c $< -o ${<:.c=.o}
 clean:
 	@$(CLEAN) ./$(OBJS)
-	@echo "$(RED)$(PERSONALNAME) -> Objects files deleted."
+	@echo "$(RED)$(PERSONALNAME) -> Objects files deleted.$(DEFAULT)"
 fclean:
 	@$(CLEAN) ./$(OBJS)
 	@$(CLEAN) ./$(NAME)
-	@echo "$(RED)$(PERSONALNAME) -> Library and objects files deleted."
+	@echo "$(RED)$(PERSONALNAME) -> Library and objects files deleted.$(DEFAULT)"
 re: fclean all
 
 .PHONY : all clean fclean re
