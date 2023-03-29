@@ -1,0 +1,9 @@
+[submodule "42Malaga-libft"]
+	path = 42Malaga-libft
+	url = https://github.com/Javisanchezf/42Malaga-libft.git
+[submodule "42Malaga-get_next_line"]
+	path = 42Malaga-get_next_line
+	url = https://github.com/Javisanchezf/42Malaga-get_next_line
+[submodule "42Malaga-ft_printf"]
+	path = 42Malaga-ft_printf
+	url = https://github.com/Javisanchezf/42Malaga-ft_printf.git
