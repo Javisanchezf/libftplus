@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/29 19:11:37 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/29 19:11:58 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,9 +73,10 @@ plusmake plusclean plusfclean plusre
 
 #Personal use
 git: fclean gitignore
-	@git add *
-	@git commit -m "AUTOMATIC COMMIT"
-	@git push
+	git add *
+	git commit -m "AUTOMATIC COMMIT"
+	git push
+	git ls-files
 gitignore:
 	@echo ".*\n*.out\n*.o\n*.a">.gitignore
 	@echo "$(GREEN)$(PERSONALNAME)Gitignore created successfully.$(DEFAULT)"
