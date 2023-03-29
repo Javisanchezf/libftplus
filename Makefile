@@ -6,11 +6,11 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/29 19:40:41 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/29 21:04:48 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = libftplus.a
 CFLAGS = -Wall -Werror -Wextra
 CC = gcc
 CLEAN = rm -Rf
@@ -20,8 +20,10 @@ PRINTF = 42Malaga-ft_printf
 PLUS = Plus
 
 all: submodules libftmake nextlinemake printfmake plusmake
+	ar -rcs $(NAME) ./42Malaga-ft_printf/*.o ./42Malaga-get_next_line/*.o 42Malaga-libft/*.o Plus/*.o
 clean: libftclean nextlineclean printfclean plusclean
 fclean: libftfclean nextlinefclean printffclean plusfclean
+	rm -rf $(NAME)
 re: libftre nextlinere printfre plusre
 
 .c.o:
