@@ -78,7 +78,7 @@ plusmake plusclean plusfclean plusre
 #Personal use
 git: fclean gitignore
 	git add *
-	git commit -m "AUTOMATIC COMMIT"
+	git commit -m "Little changes"
 	git push
 	git ls-files
 gitignore:
