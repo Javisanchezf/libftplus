@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/31 20:37:46 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/31 20:38:24 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,7 +87,6 @@ git: fclean gitignore
 	@echo "$(CYAN)Git:$(DEFAULT) Commit this changes with "Little changes"."
 	@git push
 	@echo "$(GREEN)Git:$(DEFAULT) Pushing all changes."
-	@git ls-files
 gitignore:
 	@echo ".*\n*.out\n*.o\n*.a">.gitignore
 	@echo "$(GREEN)Gitignore created successfully.$(DEFAULT)"
