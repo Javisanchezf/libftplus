@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/31 20:32:47 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/31 20:33:12 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,9 @@ INCLUDE = inclue
 
 all: libftmake nextlinemake printfmake plusmake $(NAME)
 $(NAME):
-	libtool -static -o $(NAME) $(LIBFT)/libft.a $(PRINTF)/libftprintf.a \
+	@libtool -static -o $(NAME) $(LIBFT)/libft.a $(PRINTF)/libftprintf.a \
 	$(NEXTLINE)/get_next_line.a $(PLUS)/plus.a
-	echo "$(MAGENTA)Static library union $(NAME) created successfully.$(DEFAULT)"
+	@echo "$(MAGENTA)Static library union $(NAME) created successfully.$(DEFAULT)"
 clean: libftclean nextlineclean printfclean plusclean
 fclean: libftfclean nextlinefclean printffclean plusfclean
 	@$(CLEAN) ./$(NAME)
