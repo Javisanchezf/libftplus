@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/29 21:51:04 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/31 20:31:36 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,13 +19,17 @@ LIBFT = 42Malaga-libft
 NEXTLINE = 42Malaga-get_next_line
 PRINTF = 42Malaga-ft_printf
 PLUS = Plus
+INCLUDE = inclue
 
-all: libftmake nextlinemake printfmake plusmake
-	@ar -rcs $(NAME) ./42Malaga-ft_printf/*.o ./42Malaga-get_next_line/*.o 42Malaga-libft/*.o Plus/*.o
+all: libftmake nextlinemake printfmake plusmake $(NAME)
+$(NAME):
+	libtool -static -o $(NAME) $(LIBFT)/libft.a $(PRINTF)/libftprintf.a \
+	$(NEXTLINE)/get_next_line.a $(PLUS)/plus.a
+	echo "$(MAGENTA)Static library union $(NAME) created successfully.$(DEFAULT)"
 clean: libftclean nextlineclean printfclean plusclean
 fclean: libftfclean nextlinefclean printffclean plusfclean
-	@rm -rf $(NAME)
-	@echo "$(RED)$(PERSONALNAME) -> Library deleted.$(DEFAULT)"
+	@$(CLEAN) ./$(NAME)
+	@echo "$(RED)Removing:$(DEFAULT) Static library union $(NAME)."
 re: libftre nextlinere printfre plusre
 
 .c.o:
@@ -92,7 +96,13 @@ gitignore:
 	@echo "$(GREEN)All .git removed.$(DEFAULT)"
 
 #COLORS
-RED = \033[1;31m
-GREEN = \033[1;32m
-YELLOW = \033[1;33m
-DEFAULT = \033[0m
+BOLD	:= \033[1m
+BLACK	:= \033[30;1m
+RED		:= \033[31;1m
+GREEN	:= \033[32;1m
+YELLOW	:= \033[33;1m
+BLUE	:= \033[34;1m
+MAGENTA	:= \033[35;1m
+CYAN	:= \033[36;1m
+WHITE	:= \033[37;1m
+DEFAULT	:= \033[0m
