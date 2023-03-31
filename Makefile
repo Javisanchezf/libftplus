@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/31 20:38:24 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/31 20:38:55 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,7 +88,7 @@ git: fclean gitignore
 	@git push
 	@echo "$(GREEN)Git:$(DEFAULT) Pushing all changes."
 gitignore:
-	@echo ".*\n*.out\n*.o\n*.a">.gitignore
+	@echo "$(GREEN)Creating:$(DEFAULT) Gitignore."
 	@echo "$(GREEN)Gitignore created successfully.$(DEFAULT)"
 42prepare: submodules
 	@rm -rf $(LIBFT)/.git
