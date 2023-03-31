@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/31 20:31:36 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/31 20:32:47 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ libftre: libftclean libftmake
 nextlinemake:
 	@make bonus -C $(NEXTLINE)
 nextlineclean:
-	@make bonus clean -C $(NEXTLINE)
+	@make clean -C $(NEXTLINE)
 nextlinefclean:
 	@make fclean -C $(NEXTLINE)
 nextlinere: nextlinefclean nextlinemake
