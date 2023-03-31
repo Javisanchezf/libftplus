@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/03/31 20:40:57 by javiersa         ###   ########.fr        #
+#    Updated: 2023/03/31 20:41:24 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,11 +82,11 @@ plusmake plusclean plusfclean plusre
 #Personal use
 git: fclean gitignore
 	@git add *
-	@echo "$(BOLD)$(YELLOW)Git:$(DEFAULT) Adding all archives.$(DEFAULT)"
+	@echo "$(BOLD)$(YELLOW)Git:$(WHITE) Adding all archives.$(DEFAULT)"
 	@git commit -m "Little changes"
-	@echo "$(BOLD)$(CYAN)Git:$(DEFAULT) Commit this changes with "Little changes".$(DEFAULT)"
+	@echo "$(BOLD)$(CYAN)Git:$(WHITE) Commit this changes with "Little changes".$(DEFAULT)"
 	@git push
-	@echo "$(BOLD)$(GREEN)Git:$(DEFAULT) Pushing all changes.$(DEFAULT)"
+	@echo "$(BOLD)$(GREEN)Git:$(WHITE) Pushing all changes.$(DEFAULT)"
 gitignore:
 	@echo ".*\n*.out\n*.o\n*.a">.gitignore
 	@echo "$(GREEN)Creating:$(DEFAULT) Gitignore."
