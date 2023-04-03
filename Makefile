@@ -11,6 +11,7 @@
 # **************************************************************************** #
 
 NAME = libftplus.a
+NAMEUBUNTU = libftplus.a
 PERSONALNAME = Libftplus
 CFLAGS = -Wall -Werror -Wextra
 CC = gcc
@@ -26,6 +27,12 @@ $(NAME):
 	@libtool -static -o $(NAME) $(LIBFT)/libft.a $(PRINTF)/libftprintf.a \
 	$(NEXTLINE)/get_next_line.a $(PLUS)/plus.a
 	@echo "$(MAGENTA)Static library union $(NAME) created successfully.$(DEFAULT)"
+ubuntu: libftmake nextlinemake printfmake plusmake $(NAMEUBUNTU)
+$(NAMEUBUNTU):
+	@ar rcs $(NAMEUBUNTU) $(LIBFT)/*.o $(PRINTF)/*.o \
+	$(NEXTLINE)/*.o $(PLUS)/*.o
+	@echo "$(MAGENTA)Library $(NAME) created successfully.$(DEFAULT)"
+
 clean: libftclean nextlineclean printfclean plusclean
 fclean: libftfclean nextlinefclean printffclean plusfclean
 	@$(CLEAN) ./$(NAME)
