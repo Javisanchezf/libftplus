@@ -6,7 +6,7 @@
 /*   By: javiersa <javiersa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:52:28 by javiersa          #+#    #+#             */
-/*   Updated: 2023/04/05 12:53:00 by javiersa         ###   ########.fr       */
+/*   Updated: 2023/04/05 13:26:29 by javiersa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int		ft_free_and_null(void **ptr);
  * @param c The character to be checked.
  * @return 1 if the character is a white space character, 0 otherwise.
  */
-int	ft_isspace(char c);
+int		ft_isspace(char c);
 
 /**
  * @brief Counts the number of words in a string.
@@ -83,7 +83,7 @@ int	ft_isspace(char c);
  * @param str The string to be counted.
  * @return The number of words in the string.
  */
-int	ft_count_words(const char *str);
+int		ft_count_words(const char *str);
 
 /**
  * @brief Converts a hexadecimal number to a decimal number.
@@ -91,6 +91,6 @@ int	ft_count_words(const char *str);
  * @param hex The hexadecimal number to convert.
  * @return The decimal representation of the hexadecimal number.
  */
-int ft_hex_to_dec(const char *hex);
+int		ft_hex_to_dec(const char *hex);
 
 #endif
