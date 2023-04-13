@@ -6,7 +6,7 @@
 /*   By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:52:28 by javiersa          #+#    #+#             */
-/*   Updated: 2023/04/13 19:21:22 by javiersa         ###   ########.fr       */
+/*   Updated: 2023/04/13 20:30:54 by javiersa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,5 +116,16 @@ void	ft_multiple_free(int num_args, ...);
 * @return The absolute value of the input integer.
 */
 int		ft_abs(int num);
+
+/**
+ * Displays an error message on the standard error output and exits the program
+ * with an error code. Frees any pointer passed as a variable argument.
+ *
+ * @param prompt The error message to be displayed before exiting.
+ * @param num_args The number of variable arguments to be passed to the function.
+ * @param ... A variable number of pointers to be freed before exiting.
+ * @return void
+ */
+void	ft_error(char *prompt, int num_args, ...);
 
 #endif
