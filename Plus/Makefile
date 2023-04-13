@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: javiersa <javiersa@student.42malaga.com    +#+  +:+       +#+         #
+#    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/29 17:56:33 by javiersa          #+#    #+#              #
-#    Updated: 2023/04/05 12:53:12 by javiersa         ###   ########.fr        #
+#    Updated: 2023/04/13 19:14:30 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ SRC = ft_atoilong.c \
 	ft_free_and_null.c \
 	ft_isspace.c \
 	ft_count_words.c \
-	ft_hex_to_dec.c
+	ft_hex_to_dec.c \
+	ft_abs.c \
+	ft_multiple_free.c
 
 OBJS := $(SRC:.c=.o)
 

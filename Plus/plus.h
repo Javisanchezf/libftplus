@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   plus.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javiersa <javiersa@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:52:28 by javiersa          #+#    #+#             */
-/*   Updated: 2023/04/05 13:26:29 by javiersa         ###   ########.fr       */
+/*   Updated: 2023/04/13 19:21:22 by javiersa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,29 @@ int		ft_count_words(const char *str);
  * @return The decimal representation of the hexadecimal number.
  */
 int		ft_hex_to_dec(const char *hex);
+
+/**
+* @brief Frees multiple dynamically allocated memory blocks and sets the
+* pointers to NULL.
+* This function takes in a variable number of arguments representing memory
+* blocks that need to be freed,
+* and sets the corresponding pointers to NULL. It uses the
+* ft_free_and_null function to properly free each block.
+* @param num_args The number of arguments to be processed.
+* @param ... A variable number of void pointers representing the memory
+* blocks to be freed.
+* @return void.
+*/
+void	ft_multiple_free(int num_args, ...);
+
+/**
+
+* @brief Computes the absolute value of an integer.
+* This function takes in an integer and returns its absolute value, which
+* is the same value but always positive.
+* @param num The integer value to compute the absolute value for.
+* @return The absolute value of the input integer.
+*/
+int		ft_abs(int num);
 
 #endif
