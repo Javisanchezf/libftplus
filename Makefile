@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/04/24 22:12:32 by javiersa         ###   ########.fr        #
+#    Updated: 2023/04/24 22:13:15 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ $(NAME):
 $(NAME)_nolibtool:
 	@ar rcs $(NAME) $(LIBFT)/*.o $(PRINTF)/*.o \
 	$(NEXTLINE)/*.o $(PLUS)/*.o
-	@echo "$(MAGENTA)Static library union $(NAME) created successfully.$(DEFAULT)"	
+	@echo "$(MAGENTA)Library $(NAME) created successfully.$(DEFAULT)"	
 
 clean: libftclean nextlineclean printfclean plusclean
 fclean: libftfclean nextlinefclean printffclean plusfclean
