@@ -6,12 +6,11 @@
 #    By: javiersa <javiersa@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/04/24 21:21:25 by javiersa         ###   ########.fr        #
+#    Updated: 2023/04/24 21:34:32 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftplus.a
-NAMENOLIBTOOL = libftplus2.a
 PERSONALNAME = Libftplus
 CFLAGS = -Wall -Werror -Wextra
 CC = gcc
@@ -24,20 +23,19 @@ INCLUDE = inclue
 
 all: libftmake nextlinemake printfmake plusmake $(NAME)
 
-nolibtool: libftmake nextlinemake printfmake plusmake $(NAMENOLIBTOOL)
+nolibtool: libftmake nextlinemake printfmake plusmake
+	@ar rcs $(NAME) $(LIBFT)/*.o $(PRINTF)/libftprintf.a \
+	$(NEXTLINE)/*.o $(PLUS)/*.o
+	@echo "$(MAGENTA)Library $(NAME) created successfully.$(DEFAULT)"
+
 $(NAME):
 	@libtool -static -o $(NAME) $(LIBFT)/libft.a $(PRINTF)/libftprintf.a \
 	$(NEXTLINE)/get_next_line.a $(PLUS)/plus.a
-	@echo "$(MAGENTA)Static library union $(NAME) created successfully.$(DEFAULT)"
-
-$(NAMENOLIBTOOL):
-	@ar rcs $(NAMENOLIBTOOL) $(LIBFT)/*.o $(PRINTF)/libftprintf.a \
-	$(NEXTLINE)/*.o $(PLUS)/*.o
-	@echo "$(MAGENTA)Library $(NAMENOLIBTOOL) created successfully.$(DEFAULT)"
+	@echo "$(MAGENTA)Static library union $(NAME) created successfully.$(DEFAULT)"	
 
 clean: libftclean nextlineclean printfclean plusclean
 fclean: libftfclean nextlinefclean printffclean plusfclean
-	@$(CLEAN) ./$(NAME) ./$(NAMENOLIBTOOL)
+	@$(CLEAN) ./$(NAME)
 	@echo "$(RED)Removing:$(DEFAULT) Static library union $(NAME)."
 re: libftre nextlinere printfre plusre
 
