@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/04/24 21:34:32 by javiersa         ###   ########.fr        #
+#    Updated: 2023/04/24 22:12:32 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,14 +23,16 @@ INCLUDE = inclue
 
 all: libftmake nextlinemake printfmake plusmake $(NAME)
 
-nolibtool: libftmake nextlinemake printfmake plusmake
-	@ar rcs $(NAME) $(LIBFT)/*.o $(PRINTF)/libftprintf.a \
-	$(NEXTLINE)/*.o $(PLUS)/*.o
-	@echo "$(MAGENTA)Library $(NAME) created successfully.$(DEFAULT)"
+nolibtool: libftmake nextlinemake printfmake plusmake $(NAME)_nolibtool
 
 $(NAME):
-	@libtool -static -o $(NAME) $(LIBFT)/libft.a $(PRINTF)/libftprintf.a \
+	@libtool -static $(NAME) $(LIBFT)/libft.a $(PRINTF)/libftprintf.a \
 	$(NEXTLINE)/get_next_line.a $(PLUS)/plus.a
+	@echo "$(MAGENTA)Static library union $(NAME) created successfully.$(DEFAULT)"
+
+$(NAME)_nolibtool:
+	@ar rcs $(NAME) $(LIBFT)/*.o $(PRINTF)/*.o \
+	$(NEXTLINE)/*.o $(PLUS)/*.o
 	@echo "$(MAGENTA)Static library union $(NAME) created successfully.$(DEFAULT)"	
 
 clean: libftclean nextlineclean printfclean plusclean
