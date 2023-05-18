@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   plus.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: javiersa <javiersa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:52:28 by javiersa          #+#    #+#             */
-/*   Updated: 2023/04/13 20:30:54 by javiersa         ###   ########.fr       */
+/*   Updated: 2023/05/18 17:37:25 by javiersa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,5 +127,29 @@ int		ft_abs(int num);
  * @return void
  */
 void	ft_error(char *prompt, int num_args, ...);
+
+/**
+ * @brief Frees the memory allocated for a double-pointer string\
+ *  array, including individual strings.
+ *
+ * This function ensures that each string has a value before freeing it.
+ *
+ * @param str Double-pointer to a string array that needs to be freed.
+ *
+ * @return void
+ */
+void	ft_split_free(char **str);
+
+/**
+ * @brief Prints the elements of a string array using printf.
+ *
+ * This function iterates through the string array and prints \
+ * each element along with its index.
+ *
+ * @param split The string array to be printed.
+ *
+ * @return void
+ */
+void	ft_printf_split(char **split);
 
 #endif
