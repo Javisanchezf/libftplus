@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/04/24 22:13:15 by javiersa         ###   ########.fr        #
+#    Updated: 2023/05/18 17:21:39 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,96 +15,71 @@ PERSONALNAME = Libftplus
 CFLAGS = -Wall -Werror -Wextra
 CC = gcc
 CLEAN = rm -Rf
-LIBFT = 42Malaga-libft
-NEXTLINE = 42Malaga-get_next_line
-PRINTF = 42Malaga-ft_printf
-PLUS = Plus
-INCLUDE = inclue
 
-all: libftmake nextlinemake printfmake plusmake $(NAME)
+# Directories where the source files are located
+LIBFT_DIR := 42Malaga-libft
+NEXTLINE_DIR := 42Malaga-get_next_line
+PRINTF_DIR := 42Malaga-ft_printf
+PLUS_DIR := Plus
 
-nolibtool: libftmake nextlinemake printfmake plusmake $(NAME)_nolibtool
+# Source files in each directory
+LIBFT_SRCS := $(wildcard $(LIBFT_DIR)/*.c)
+NEXTLINE_SRCS := $(NEXTLINE_DIR)/get_next_line_bonus.c $(NEXTLINE_DIR)/get_next_line_utils_bonus.c
+PRINTF_SRCS := $(wildcard $(PRINTF_DIR)/*.c)
+PLUS_SRCS := $(wildcard $(PLUS_DIR)/*.c)
 
-$(NAME):
-	@libtool -static $(NAME) $(LIBFT)/libft.a $(PRINTF)/libftprintf.a \
-	$(NEXTLINE)/get_next_line.a $(PLUS)/plus.a
-	@echo "$(MAGENTA)Static library union $(NAME) created successfully.$(DEFAULT)"
+ALL_SRCS = $(LIBFT_SRCS) $(NEXTLINE_SRCS) $(PRINTF_SRCS) $(PLUS_SRCS)
 
-$(NAME)_nolibtool:
-	@ar rcs $(NAME) $(LIBFT)/*.o $(PRINTF)/*.o \
-	$(NEXTLINE)/*.o $(PLUS)/*.o
-	@echo "$(MAGENTA)Library $(NAME) created successfully.$(DEFAULT)"	
+OBJS := $(ALL_SRCS:.c=.o)
 
-clean: libftclean nextlineclean printfclean plusclean
-fclean: libftfclean nextlinefclean printffclean plusfclean
-	@$(CLEAN) ./$(NAME)
-	@echo "$(RED)Removing:$(DEFAULT) Static library union $(NAME)."
-re: libftre nextlinere printfre plusre
+# General rules
+
+all: $(NAME)
 
 .c.o:
-	$(CC) $(CFLAGS) -c $< -o ${<:.c=.o}
+	@$(CC) $(CFLAGS) -c $< -o ${<:.c=.o}
+	@echo "$(GREEN)Compiling:$(DEFAULT) $(notdir $<)"
 
-libftmake:
-	@make -C $(LIBFT)
-	@make bonus -C $(LIBFT)
-libftclean:
-	@make clean -C $(LIBFT)
-libftfclean:
-	@make fclean -C $(LIBFT)
-libftre: libftclean libftmake
-
-nextlinemake:
-	@make bonus -C $(NEXTLINE)
-nextlineclean:
-	@make clean -C $(NEXTLINE)
-nextlinefclean:
-	@make fclean -C $(NEXTLINE)
-nextlinere: nextlinefclean nextlinemake
-
-printfmake:
-	@make -C $(PRINTF)
-printfclean:
-	@make clean -C $(PRINTF)
-printffclean:
-	@make fclean -C $(PRINTF)
-printfre: printffclean printfmake
-
-plusmake:
-	@make -C $(PLUS)
-plusclean:
-	@make clean -C $(PLUS)
-plusfclean:
-	@make fclean -C $(PLUS)
-plusre: plusfclean plusmake
-
-submodules:
-	@git submodule update --init --recursive
-	@echo "$(GREEN)The submodules have been created and updated successfully.$(DEFAULT)"
-	
-
-.PHONY : all clean fclean re submodules git gitignore 42prepare\
-libftclean libftfclean libftmake \
-nextlinemake nextlineclean nextlinefclean nextlinere \
-printfmake printfclean printffclean printfre \
-plusmake plusclean plusfclean plusre
+$(NAME): $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
+	@echo "$(MAGENTA)Library $(NAME) created successfully.$(DEFAULT)"
+clean:
+	@$(CLEAN) ./$(OBJS)
+	@echo "$(RED)Removing:$(DEFAULT) All objects from $(PERSONALNAME)."
+fclean: clean
+	@$(CLEAN) ./$(NAME)
+	@echo "$(RED)Removing:$(DEFAULT) Library $(NAME)."
+re: fclean all
 
 #Personal use
 git: fclean gitignore
 	@git add *
 	@echo "$(BOLD)$(YELLOW)Git:$(WHITE) Adding all archives.$(DEFAULT)"
-	@git commit -m "Little changes"
-	@echo "$(BOLD)$(CYAN)Git:$(WHITE) Commit this changes with "Little changes".$(DEFAULT)"
+	@git commit -m "Little changes $(DATETIME)"
+	@echo "$(BOLD)$(CYAN)Git:$(WHITE) Commit this changes with "Little changes $(DATETIME)".$(DEFAULT)"
 	@git push
 	@echo "$(BOLD)$(GREEN)Git:$(WHITE) Pushing all changes.$(DEFAULT)"
+brunch_git: fclean gitignore
+	@git add *
+	@echo "$(BOLD)$(YELLOW)Git ($(GIT_BRANCH)):$(WHITE) Adding all archives.$(DEFAULT)"
+	@git commit -m "Little changes $(DATETIME)"
+	@echo "$(BOLD)$(CYAN)Git ($(GIT_BRANCH)):$(WHITE) Commit this changes in brunch $(GIT_BRANCH) with "Little changes $(DATETIME)".$(DEFAULT)"
+	@git push --set-upstream origin $(GIT_BRANCH)
+	@echo "$(BOLD)$(GREEN)Git ($(GIT_BRANCH)):$(WHITE) Pushing all changes.$(DEFAULT)"
+submodules:
+	@git submodule update --init --recursive
+	@echo "$(GREEN)The submodules have been created and updated successfully.$(DEFAULT)"
 gitignore:
 	@echo ".*\n*.out\n*.o\n*.a">.gitignore
 	@echo "$(GREEN)Creating:$(DEFAULT) Gitignore."
 42prepare: submodules
-	@rm -rf $(LIBFT)/.git
-	@rm -rf $(NEXTILE)/.git
-	@rm -rf $(PRINTF)/.git
-	@rm -rf .git .gitmodules
+	@rm -rf .git*
 	@echo "$(GREEN)All .git removed.$(DEFAULT)"
+valgrind:
+	valgrind --leak-check=full ./$(PROGRAM) $(PARAMS)
+
+.PHONY : all clean fclean re submodules git gitignore 42prepare\
+	git brunch_git submodules gitignore 42prepare valgrind
 
 #COLORS
 BOLD	:= \033[1m
