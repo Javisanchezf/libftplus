@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/05/18 17:21:39 by javiersa         ###   ########.fr        #
+#    Updated: 2023/05/18 17:24:10 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,9 @@ PERSONALNAME = Libftplus
 CFLAGS = -Wall -Werror -Wextra
 CC = gcc
 CLEAN = rm -Rf
+PARAMS = NULL
+DATETIME := $(shell date +%Y-%m-%d' '%H:%M:%S)
+GIT_BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
 
 # Directories where the source files are located
 LIBFT_DIR := 42Malaga-libft
