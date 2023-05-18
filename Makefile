@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/05/18 17:53:47 by javiersa         ###   ########.fr        #
+#    Updated: 2023/05/18 18:00:51 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,11 +71,10 @@ gitignore:
 42prepare: submodules
 	@rm -rf .git*
 	@echo "$(GREEN)All .git removed.$(DEFAULT)"
-valgrind:
+valgrind_datarace: $(PROGRAM)
+	valgrind --tool="helgrind" ./$(PROGRAM) $(PARAMS)
+valgrind_leaks: $(PROGRAM)
 	valgrind --leak-check=full ./$(PROGRAM) $(PARAMS)
-
-.PHONY : all clean fclean re submodules git gitignore 42prepare\
-	git brunch_git submodules gitignore 42prepare valgrind
 
 #COLORS
 BOLD	:= \033[1m
@@ -88,3 +87,6 @@ MAGENTA	:= \033[35;1m
 CYAN	:= \033[36;1m
 WHITE	:= \033[37;1m
 DEFAULT	:= \033[0m
+
+.PHONY : all clean fclean re \
+	git submodules gitignore 42prepare valgrind_datarace valgrind_leaks
