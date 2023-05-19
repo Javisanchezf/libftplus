@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   plus.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javiersa <javiersa@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:52:28 by javiersa          #+#    #+#             */
-/*   Updated: 2023/05/18 17:37:25 by javiersa         ###   ########.fr       */
+/*   Updated: 2023/05/19 20:35:57 by javiersa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,6 @@
 *				conversion could be performed, a zero value is returned.
 */
 long	ft_atoilong(const char *str);
-
-/*
-*	@brief	Check the leaks with this form: Add atexit(ft_void); at the end of	main.
-*	@return		The memory that hasn't been released.
-*/
-void	ft_leaks(void);
 
 /*
 *	@brief	Swap two integers numbers.
