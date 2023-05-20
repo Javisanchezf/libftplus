@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   plus.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: javiersa <javiersa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:52:28 by javiersa          #+#    #+#             */
-/*   Updated: 2023/05/19 20:35:57 by javiersa         ###   ########.fr       */
+/*   Updated: 2023/05/20 12:09:23 by javiersa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,5 +145,13 @@ void	ft_split_free(char **str);
  * @return void
  */
 void	ft_printf_split(char **split);
+
+/**
+ * Count the number of elements in an array of strings.
+ *
+ * @param split - Array of strings.
+ * @return The number of elements in the array.
+ */
+int		ft_split_size(char **split);
 
 #endif

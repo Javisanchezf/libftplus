@@ -6,7 +6,7 @@
 #    By: javiersa <javiersa@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/29 17:56:33 by javiersa          #+#    #+#              #
-#    Updated: 2023/05/18 17:36:50 by javiersa         ###   ########.fr        #
+#    Updated: 2023/05/20 12:09:00 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ SRC = ft_atoilong.c \
 	ft_multiple_free.c \
 	ft_error.c \
 	ft_split_free.c \
-	ft_printf_split.c
+	ft_printf_split.c \
+	ft_split_size.c
 
 OBJS := $(SRC:.c=.o)
 
