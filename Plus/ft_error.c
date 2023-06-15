@@ -6,7 +6,7 @@
 /*   By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 20:27:18 by javiersa          #+#    #+#             */
-/*   Updated: 2023/04/13 20:28:23 by javiersa         ###   ########.fr       */
+/*   Updated: 2023/06/15 20:43:27 by javiersa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_error(char *prompt, int num_args, ...)
 		ft_free_and_null((void **)&ptr);
 	}
 	va_end(args);
-	ft_putstr_fd("❌ \033[31;1m", 2);
+	ft_putstr_fd("\033[31;1m", 2);
 	ft_putstr_fd(prompt, 2);
 	ft_putstr_fd("\n\033[0m", 2);
 	exit(EXIT_FAILURE);
