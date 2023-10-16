@@ -6,7 +6,7 @@
 /*   By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:52:28 by javiersa          #+#    #+#             */
-/*   Updated: 2023/10/16 21:44:13 by javiersa         ###   ########.fr       */
+/*   Updated: 2023/10/16 21:51:20 by javiersa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ long	ft_atoilong(const char *str);
 /*
 *	@brief	Swap two values.
 *
-*	@param		*a	The value.
-*	@param		*b	The value.
+*	@param		*a	The value. Remember pass with &.
+*	@param		*b	The value. Remember pass with &.
 *	@param		*size	The value size (sizeof()).
 *
 */
