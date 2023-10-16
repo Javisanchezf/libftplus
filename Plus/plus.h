@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   plus.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javiersa <javiersa@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:52:28 by javiersa          #+#    #+#             */
-/*   Updated: 2023/05/20 12:09:23 by javiersa         ###   ########.fr       */
+/*   Updated: 2023/10/16 21:44:13 by javiersa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,14 @@
 long	ft_atoilong(const char *str);
 
 /*
-*	@brief	Swap two integers numbers.
+*	@brief	Swap two values.
 *
-*	@param		*a	The first number.
-*	@param		*b	The second number.
+*	@param		*a	The value.
+*	@param		*b	The value.
+*	@param		*size	The value size (sizeof()).
 *
 */
-void	ft_swapint(int *a, int *b);
+void	ft_swap(void *a, void *b, size_t size);
 
 /*
 *	@brief		Creates a new string allocating memory with malloc(3) joining
