@@ -6,7 +6,7 @@
 /*   By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 21:39:02 by javiersa          #+#    #+#             */
-/*   Updated: 2023/10/16 21:44:46 by javiersa         ###   ########.fr       */
+/*   Updated: 2023/10/17 17:28:13 by javiersa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_swap(void *a, void *b, size_t size)
 {
 	char	*tmp;
 
-	tmp = ft_calloc(size + 1, sizeof(char));
+	tmp = ft_calloc(size, sizeof(char));
 	ft_swap_aux(tmp, a, size);
 	ft_swap_aux(a, b, size);
 	ft_swap_aux(b, tmp, size);
