@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: javiersa <javiersa@student.42malaga.com    +#+  +:+       +#+         #
+#    By: javiersa <javiersa@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 19:21:46 by javiersa          #+#    #+#              #
-#    Updated: 2023/05/18 18:00:51 by javiersa         ###   ########.fr        #
+#    Updated: 2023/11/08 21:33:29 by javiersa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,6 @@ CC = gcc
 CLEAN = rm -Rf
 PARAMS = NULL
 DATETIME := $(shell date +%Y-%m-%d' '%H:%M:%S)
-GIT_BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
 
 # Directories where the source files are located
 LIBFT_DIR := 42Malaga-libft
@@ -57,11 +56,11 @@ re: fclean all
 #Personal use
 git: fclean gitignore
 	@git add *
-	@echo "$(BOLD)$(YELLOW)Git ($(GIT_BRANCH)):$(WHITE) Adding all archives.$(DEFAULT)"
+	@echo "$(BOLD)$(YELLOW)Git:$(WHITE) Adding all archives.$(DEFAULT)"
 	@git commit -m "Little changes $(DATETIME)"
-	@echo "$(BOLD)$(CYAN)Git ($(GIT_BRANCH)):$(WHITE) Commit this changes in brunch $(GIT_BRANCH) with "Little changes $(DATETIME)".$(DEFAULT)"
-	@git push --set-upstream origin $(GIT_BRANCH)
-	@echo "$(BOLD)$(GREEN)Git ($(GIT_BRANCH)):$(WHITE) Pushing all changes.$(DEFAULT)"
+	@echo "$(BOLD)$(CYAN)Git :$(WHITE) Commit this changes in brunch with "Little changes $(DATETIME)".$(DEFAULT)"
+	@git push
+	@echo "$(BOLD)$(GREEN)Git:$(WHITE) Pushing all changes.$(DEFAULT)"
 submodules:
 	@git submodule update --init --recursive
 	@echo "$(GREEN)The submodules have been created and updated successfully.$(DEFAULT)"
